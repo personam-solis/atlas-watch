@@ -24,5 +24,5 @@ def lambda_handler(event, context):
 
     http = urllib3.PoolManager()
     response = http.request('GET', url, preload_content=False)
-
+ 
     s3.upload_fileobj(response, bucket, fullpath)
